@@ -1,0 +1,53 @@
+Project Title: AI-Assisted Branding Consultant
+
+Learn and Help  (www.learnandhelp.com) is a non-profit organization offering coding classes to middle school and high school students.
+
+It maintains several repositories.  (The list can change).
+
+Here are some examples.
+
+https://github.com/sjasthi/python101
+https://github.com/sjasthi/Python-DS-Data-Science
+https://github.com/sjasthi/Python-ML-Machine-Learning
+
+and some more may be added later on.
+
+What is the problem we are solving?
+
+Right now, there is no consistency in the presentations. There is no branding.  There is no consistent header and footer. Logos, Images, fonts, styles, etc. are not reflecting the brand.
+
+We want to make sure all the material is consistently presented and branded.
+
+
+We want to the assistance of AI (OpenAI):
+1. to review the material of a GITHUB Repo
+2. Provide recommendations on the changes to maintain the consistent branding
+3. ONce the user approves the recommendations, the AI tool will actually implement those recommendation to provide new updates.
+4. (and optionally) update the GITHUB repo with new updated versions.
+
+What to do this project?
+
+1. (Core Requirement) You can build a python based automation which takes the GITHUB repos as the input and provides the recommendations and takes up the enhancements to fix the files.
+
+2. (GUI front-end) is optional.
+
+Focus on FP5 onwards. Your evaluation will be based on what you would do for 
+
+- FP5, FP6, FP7, FP8, FP9, FP19, FP-Final
+
+I will give you a benefit of doubt and ignore FP1 to FP4. Dropping these will help you in your evaluation.
+
+
+Plan for FP5:  Prepare a weekly plan to implement this project.  Share an excel file with weekly outcomes.
+
+Plan for FP6: Review Python 101 with basic branding guidelines.
+
+Plan for FP7:
+
+Plan for FP8:
+
+Plan for FP9:
+
+Plan for FP10:
+
+Plan for FP-Final:
