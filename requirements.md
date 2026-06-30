@@ -159,12 +159,7 @@ Performance testing - Error handling - User documentation
 -   Final report
 -   Recorded demo
 
-## Features That Strengthen the Capstone
-
--   Pluggable support for multiple LLM providers
--   Configurable branding rules using JSON or YAML
--   Approval workflow with audit trail
--   Unit, integration, and system tests
+## (Optional Enhancements)
+-   Configurable branding rules using JSON
 -   Branding compliance metrics
--   Modular architecture
 -   Comprehensive logging and error handling
