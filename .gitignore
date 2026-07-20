@@ -42,3 +42,4 @@ application-local.yml
 # Generated reports/output
 reports/
 output/
+HELP.md
