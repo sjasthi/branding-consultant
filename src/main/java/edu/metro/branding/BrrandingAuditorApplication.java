@@ -1,0 +1,11 @@
+package edu.metro.branding;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BrrandingAuditorApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(BrrandingAuditorApplication.class, args);
+    }
+}
