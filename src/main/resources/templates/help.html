@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Guide - Branding Auditor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f6f8; color: #333; }
+        .card { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto; }
+        h1 { color: #0066cc; margin-top: 0; }
+        h2 { color: #495057; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; margin-top: 30px; }
+        ol { line-height: 1.8; padding-left: 20px; }
+        li { margin-bottom: 12px; }
+        code { background-color: #e9ecef; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; }
+        .step-box { background-color: #f8f9fa; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; }
+        .btn { display: inline-block; background-color: #6c757d; color: white; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .btn:hover { background-color: #5a6268; }
+        .nav-footer { margin-top: 30px; border-top: 1px solid #e9ecef; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>How to Use Branding Auditor</h1>
+        <p>Welcome to the <strong>Branding Auditor</strong> user guide. Follow the instructions below to run repository scans, manage authentication, and trigger REST API audits.</p>
+
+        <h2>1. Authenticating & Accessing the System</h2>
+        <div class="step-box">
+            <ol>
+                <li>Navigate to the login page at <code>/login</code>.</li>
+                <li>Enter your registered credentials (managed via <code>User</code> entity and <code>UserRepository</code>).</li>
+                <li>Upon successful authentication, Spring Security will redirect you to the main dashboard (<code>/dashboard</code>).</li>
+            </ol>
+        </div>
+
+        <h2>2. Running a Workspace Repository Scan</h2>
+        <div class="step-box">
+            <ol>
+                <li>Click <strong>"Run New Audit"</strong> on the Dashboard or navigate directly to <code>/audit</code>.</li>
+                <li>In the <strong>Directory Target Path</strong> input box, type or paste the absolute system path to your project folder (e.g., <code>C:\projects\my-repo</code> or <code>/home/user/projects/my-repo</code>).</li>
+                <li>Click <strong>"Start Scan"</strong>.</li>
+                <li>The <code>RepositoryScanner</code> will traverse the directory tree, and <code>BrandingAnalyzer</code> will evaluate code files for <code>TODO</code>, <code>FIXME</code>, and branding policy compliance.</li>
+            </ol>
+        </div>
+
+        <h2>3. Reviewing Audit Findings & Outputs</h2>
+        <div class="step-box">
+            <ul>
+                <li><strong>Dashboard Overview:</strong> High-level execution status is displayed directly on the Dashboard view.</li>
+                <li><strong>Report File:</strong> The system automatically invokes <code>ReportGenerator</code> to compile findings (<code>BrandingObservation</code> records) into a structured <code>repository-report.txt</code> file saved to the project root.</li>
+            </ul>
+        </div>
+
+        <h2>4. Programmatic Scans via REST API</h2>
+        <div class="step-box">
+            <p>For automated CI/CD pipelines or headless invocations, send a <code>POST</code> request to the REST controller:</p>
+            <ul>
+                <li><strong>Endpoint:</strong> <code>POST /api/audit/run</code></li>
+                <li><strong>Header:</strong> <code>Content-Type: application/json</code></li>
+                <li><strong>Payload:</strong> <code>{"targetPath": "/path/to/repo", "status": "PENDING"}</code></li>
+                <li><strong>Response:</strong> Returns the updated <code>AuditDto</code> object with completed status telemetry.</li>
+            </ul>
+        </div>
+
+        <div class="nav-footer">
+            <a th:href="@{/dashboard}" class="btn">Back to Dashboard</a>
+            <a th:href="@{/audit}" class="btn" style="background-color: #0066cc;">Start Scan Now</a>
+        </div>
+    </div>
+
+</body>
+</html>
