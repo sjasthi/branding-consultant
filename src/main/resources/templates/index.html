@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Branding Auditor - Repository Scan</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f6f8; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input[type="text"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #0066cc; color: white; border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; }
+        button:hover { background-color: #0052a3; }
+        .nav-links { margin-top: 20px; text-align: center; }
+        .nav-links a { color: #0066cc; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Scan Workspace Repository</h1>
+        <p>Enter the target directory path on your system to begin the heuristic branding audit.</p>
+
+        <form th:action="@{/audit}" method="post">
+            <div class="form-group">
+                <label for="targetPath">Directory Target Path:</label>
+                <input type="text" id="targetPath" name="targetPath" placeholder="C:\path\to\repository" required />
+            </div>
+
+            <button type="submit">Start Scan</button>
+        </form>
+
+        <div class="nav-links">
+            <a th:href="@{/dashboard}">Dashboard</a> |
+            <a th:href="@{/help}">Help & Documentation</a>
+        </div>
+    </div>
+
+</body>
+</html>
